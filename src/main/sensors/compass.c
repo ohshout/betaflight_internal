@@ -117,6 +117,15 @@ retry:
 #endif
         ; // fallthrough
 
+		case MAG_FAKE:
+#ifdef USE_FAKE_MAG
+				if (fakeMagDetect(dev)) {
+					magHardware = MAG_FAKE;
+					break;
+				}
+#endif
+				; //fallthrough
+
     case MAG_NONE:
         magHardware = MAG_NONE;
         break;

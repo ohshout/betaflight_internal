@@ -25,12 +25,14 @@
 
 // use simulatior's attitude directly
 // disable this if wants to test AHRS algorithm
-#define SKIP_IMU_CALC
+//#define SKIP_IMU_CALC
 
 //#define SIMULATOR_ACC_SYNC
 //#define SIMULATOR_GYRO_SYNC
 //#define SIMULATOR_IMU_SYNC
 //#define SIMULATOR_GYROPID_SYNC
+
+#define TARGET_CONFIG
 
 // file name to save config
 #define EEPROM_FILENAME "eeprom.bin"

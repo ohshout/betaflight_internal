@@ -39,6 +39,7 @@
 const timerHardware_t timerHardware[1]; // unused
 
 #include "drivers/accgyro/accgyro_fake.h"
+#include "drivers/compass/compass_fake.h"
 #include "flight/imu.h"
 
 #include "config/feature.h"
@@ -136,6 +137,12 @@ void updateState(const fdm_packet* pkt) {
 #else
     imuSetAttitudeQuat(pkt->imu_orientation_quat[0], pkt->imu_orientation_quat[1], pkt->imu_orientation_quat[2], pkt->imu_orientation_quat[3]);
 #endif
+#else
+		//read raw mag data
+		x = pkt->imu_orientation_quat[1];
+		y = pkt->imu_orientation_quat[2];
+		z = pkt->imu_orientation_quat[3];
+		fakeMagSet(x, y, z);
 #endif
 
 #if defined(SIMULATOR_IMU_SYNC)
