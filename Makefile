@@ -79,7 +79,7 @@ export RM := rm
 include $(ROOT)/make/$(OSFAMILY).mk
 
 # include the tools makefile
-include $(ROOT)/make/tools.mk
+# include $(ROOT)/make/tools.mk
 
 # default xtal value for F4 targets
 HSE_VALUE       ?= 8000000
