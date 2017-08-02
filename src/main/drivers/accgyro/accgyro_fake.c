@@ -106,6 +106,7 @@ accDev_t *fakeAccDev;
 static void fakeAccInit(accDev_t *acc)
 {
     fakeAccDev = acc;
+		acc->acc_1G = 512 * 8;
 #if defined(SIMULATOR_BUILD) && defined(SIMULATOR_MULTITHREAD)
     if (pthread_mutex_init(&acc->lock, NULL) != 0) {
         printf("Create acc lock error!\n");
